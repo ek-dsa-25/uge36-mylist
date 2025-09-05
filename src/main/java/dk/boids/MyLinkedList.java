@@ -2,9 +2,11 @@ package dk.boids;
 
 public class MyLinkedList<T> implements MyList<T> {
     private Node head;
+    private Node tail;
 
     public MyLinkedList() {
         this.head = null;
+        this.tail = null;
     }
 
     private class Node {
@@ -19,17 +21,17 @@ public class MyLinkedList<T> implements MyList<T> {
 
     @Override
     public boolean add(T element) {
+        Node newNode = new Node(element);
+
         if (this.head == null) {
-            this.head = new Node(element);
+            this.head = newNode;
+            this.tail = newNode;
             return true;
         }
 
-        Node current = head;
-        while (current.next != null) {
-            current = current.next;
-        }
+        this.tail.next = newNode;
+        this.tail = newNode;
 
-        current.next = new Node(element);
         return true;
     }
 

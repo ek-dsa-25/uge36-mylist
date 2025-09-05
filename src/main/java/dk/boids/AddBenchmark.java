@@ -7,7 +7,7 @@ public class AddBenchmark {
     }
 
     public static void benchmarkAdd() {
-        int[] sizes = {2000, 1000, 5000, 10000, 20000, 50000};
+        int[] sizes = {1000, 2000, 5000, 10000, 20000, 50000};
 
         System.out.println("Benchmark af add() metoden - O(n) kompleksitet");
         System.out.println("Størrelse\tTid (ms)\tTid per element (ns)");
